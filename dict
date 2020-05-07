@@ -2,7 +2,7 @@
 IFS='
 '
 
-script_path=`find -L $0`
-script_dir=`dirname $sript_path`
+script_path=`find -L "$0"`
+script_dir=`dirname "${script_path}"`
 
-fgrep --color=auto -w "$1" ${script_dir}/dictionary.txt
+fgrep --color=auto -w "$1" "${script_dir}/dictionary.txt"
