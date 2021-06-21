@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# search for any of the given words
+
+IFS='
+'
+
+if [ -z "$1" ];
+  then
+    echo "Missing word(s) to find"
+    exit 1
+fi
+
+script_name=$(which "$0")
+script_real=$(readlink -f "$script_name")
+dirname=$(dirname "$script_real")
+
+
+grep -F --color=auto -w "$*" "${dirname}/dictionary.txt"
